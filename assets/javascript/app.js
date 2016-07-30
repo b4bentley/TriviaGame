@@ -1,16 +1,13 @@
 $(document).ready(function() {
     //variables
 
-    var unanswered = 0;
- 
-
     var pick = 0;
     
     var choice;
-    var display;
+    // var display;
 
     //object of all the functions that make the game run
-    var game = {
+    var game = {	
 
     	time: 30,
     	correctGuesses: 0,
@@ -23,8 +20,23 @@ $(document).ready(function() {
         answer: 2,
         correct: "5",
 
-    	}],
+    	},
+    	{
+        question: "What year was old school runesape server brought back?",
+        choices: ["2000", "2004", "2007", "2010"],
+        answer: 2,
+        correct: "2007",
+    	},
 
+    	{
+        question: "What location allows you to sell any tradeable item",
+        choices: ["grand exchange", "varrock", "lumbridge", "white castle"],
+        answer: 0,
+        correct: "grand exchange",
+    	}
+
+
+    	],
 
         startGame: function() {
             $('#start').hide();
@@ -56,13 +68,22 @@ $(document).ready(function() {
             	$('#timer').html("CORRECT");
              	console.log("correct", game.correctGuesses);
             	game.displayAnswer();
+            	$('#answer').show();
             } else {
 	            game.incorrectGuess++;
 	            clearInterval(game.coutdownTimer);
 	            $('#timer').html("INCORRECT");
 	            console.log("incorrect", game.incorrectGuess);
 	            game.displayAnswer();
+	            $('#answer').show();
             }
+        }, 
+
+        displayAnswer: function() {
+            $('#question').html("The correct answer was " 
+            		+ game.trivia[choice].correct);
+            $('#answer').hide();
+             var display = setTimeout(game.nextQuestion, 2500);
         },
 
         data: function() {
@@ -77,12 +98,6 @@ $(document).ready(function() {
                     .on('click', game.check);
                 $('#answer').append(answer);
             });
-        },
-
-        displayAnswer: function() {
-            $('#question').html("The correct answer was " 
-            		+ game.trivia[choice].correct);
-            display = setTimeout(game.nextQuestion, 2500);
         },
 
         nextQuestion: function() {
@@ -103,8 +118,8 @@ $(document).ready(function() {
             		+ "<br>Incorrect answers: " + game.incorrectGuess);
             var reset = $("<button>")
                 .addClass('btn gameButton')
-                .html('Play Again')
-                .attr('id', 'reset');
+                .html('Again?');
+                // .attr('id', 'reset');
             $('#resetBtn').html(reset);
         },
 
@@ -115,7 +130,7 @@ $(document).ready(function() {
             pick = 0;
             game.coutdownTimer = undefined;
             choice = undefined;
-            display = undefined;
+            
             $('#timer').empty();
             $('#question').empty();
             $('#answer').empty();

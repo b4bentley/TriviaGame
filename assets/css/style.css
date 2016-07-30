@@ -7,5 +7,22 @@ body {
 }
 
 .game{
-	color: white;
+	color: black;
+
+	/*background-color: white;*/
+}
+
+#timer{
+	background-color: white;
+	margin: 40px,0;
+}
+
+#question{
+	background-color: white;
+	margin-top: 50px;
+}
+
+#answer{
+	margin-top: 20px;
+	background-color: white;
 }
