@@ -29,10 +29,10 @@ h1{
 
 .lower{
 	border: 2px solid black;
-	height:150px;
-	
+	height:200px;
+
 	background-color: black;
-	width:50%;
+	width:65%;
 	color:white;
 	margin: 0 auto;
 	display: inline-block;
