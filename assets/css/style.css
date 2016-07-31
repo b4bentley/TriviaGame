@@ -31,7 +31,13 @@ h1{
 	border: 2px solid black;
 	height:200px;
 
-	background-color: black;
+	 background: url("../images/rune.png") no-repeat left ;
+/*    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+*/
+    background-color: black;
 	width:65%;
 	color:white;
 	margin: 0 auto;
