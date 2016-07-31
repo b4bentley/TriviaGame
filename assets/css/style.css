@@ -29,9 +29,15 @@ h1{
 
 .lower{
 	border: 2px solid black;
-	height:40%;
+	height:150px;
+	
 	background-color: black;
 	width:50%;
 	color:white;
-	margin: 20px auto;
+	margin: 0 auto;
+	display: inline-block;
+}
+
+.gameButton{
+	background-color: lightgreen;
 }
